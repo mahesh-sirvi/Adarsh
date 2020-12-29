@@ -1,0 +1,33 @@
+{% extends 'card/base.html' %}
+{% block title %}
+Contact
+{% endblock %}
+{% block body %}
+<div class="container">
+    <center><img src='/static/IMG_6581.jpg' alt='Logo' width="280" height="280"></center>
+     <h1 class="display-4 my4 text-center">Contact Us</h1>
+
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Contact Number</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Please Provide Your Contact Info">
+        </div>
+        <div class="form-group">
+            <label for="feedback">Feedback</label>
+            <textarea class="form-control" id="feedback" name="feedback" placeholder="Reviews/Suggestions" rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+
+
+{% endblock body %}

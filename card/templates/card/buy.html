@@ -1,0 +1,45 @@
+{% extends 'card/base.html' %}
+{% block title %}
+Buy
+{% endblock %}
+{% block body %}
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Shreeji</h1>
+  <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+</div>
+
+
+<div class="card" style="text-align:center;">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{quality}}</h5>
+      <img src="/static/{{quality}}_1.jpg" height="500" width="325">
+    <p class="card-text">Items once added to the cart can be easily removed or changed later!</p>
+      <p class="card-text">Please select quantity: </p>
+      <form action="/buy" method="post">
+          {% csrf_token %}
+          <div class="col-lg-1 col-lg-offset-1 center-block my-3" style="margin:auto;">
+
+          <input type="number" class="form-control" name="quantity" min="1">
+      </div>
+
+          <button class="btn btn-primary" type="submit">Add to cart</button>
+      </form>
+  </div>
+</div>
+
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md text-center">
+        <img class="mb-2" src="/static/adarsh_logo.jpeg" alt="" width="250" height="100">
+        <small class="d-block mb-3 text-muted">&copy; 2017-2020</small>
+      </div>
+    </div>
+  </footer>
+
+
+
+{% endblock body %}
